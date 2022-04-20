@@ -67,7 +67,7 @@
           </div>
 
         <?php
-          $_SESSION['username'] = $_POST['username'];
+         $_SESSION['username'] = $_POST['username'];
 
           header('Location: pages/dashboard.php');
         } else {

@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+  echo '<meta http-equiv="refresh" content="0;url=http://localhost/karyawan">';
+}
+
+if(isset($_POST['button_logout'])){
+  session_destroy();
+  echo '<meta http-equiv="refresh" content="0;url=http://localhost/karyawan">';
+}
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -46,6 +58,9 @@
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
       <a class="nav-link px-3" href="#">Sign out</a>
+      <form method="post">
+          <button type="submit" name="button_logout" class="btn btn-danger nav-link px-3">Log out</button>
+        </form>
     </div>
   </div>
 </header>
